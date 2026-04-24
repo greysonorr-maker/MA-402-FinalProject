@@ -1,4 +1,4 @@
-# MA-402 FinalProject
+# MA-402 Final Project
 # PETsc Least Squares Project 
 
 ## Overview
