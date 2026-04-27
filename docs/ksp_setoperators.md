@@ -33,9 +33,10 @@ using the augmented system:
 
 [ A^T 0 ] [ x ] [ 0 ]
 
-The augmented matrix is called C, so the code uses:
+The matrix is built from the original matrix A by combining A, its transpose A^T, and an identity matrix. This creates a larger system that represents the least-squares problem in a different way, allowing us to solve for both the solution x and the residual at the same time. The augmented matrix is called C, so the code uses:
 
 ` ksp.setOperators(C, C) ` 
+
 
 ## Example
 ```python
@@ -50,6 +51,6 @@ ksp.setOperators(C, C)
 ksp.solve(rhs, sol)
 ```
 ## Source References
-- PETSc Manual Page: https://petsc.org/release/manualpages/KSP/KSPSetOperators/?utm_source=chatgpt.com
+- PETSc Manual Page: https://petsc.org/release/manualpages/KSP/KSPSetOperators/
 - PETSc C Source: src/ksp/ksp/interface/itcreate.c
 
