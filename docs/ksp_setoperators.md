@@ -9,7 +9,7 @@ Underlying PETSc C Function
 KSPSetOperators(KSP ksp, Mat Amat, Mat Pmat)
 
 ## Description
-ksp.setOperators assigns the matrix that defines the linear system to be solved by the KSP solver. It also optionally assigns a matrix used for preconditioning. The first matrix defines the linear system, while the second matrix is used to construct the preconditioner.
+ksp.setOperators sets the matrix that defines the linear system to be solved by the KSP solver. It can also optionally set a second matrix used for preconditioning. The first matrix defines the system, while the second helps improve how efficiently it is solved. 
 
 This method must be called before ksp.solve()
 
