@@ -10,11 +10,11 @@ ksp.setType(type)
 
 ## Description
 `ksp.setType` sets the type of solver that will be used to solve the linear system.
-PETSc provides different Krylov subspace methods (such as GMRES, CG, and others), and 
-this function allows you to choose which method the solver will use.
+PETSc provides different Krylov subspace methods, which include the Generalized Minimal Residual Method (GMRES), Conjugate Gradient Method (CG), and others.  
+This function allows you to choose which method the solver will use.
 
 ## Parameters
-- `ksp (PETSc.KSP)`: The solver object. In Python, this is the object you call the method on (for example, ksp.setType(...)).
+- `ksp (PETSc.KSP)`: The solver object. In Python, this is the object you call the method on.
 - `type (PETSc.KSP.Type)`: The solver method you want to use (such as GMRES).
 
 ## Mathematical Context
@@ -25,7 +25,7 @@ In this project, we solve an augmented system of the form:
 
 [ A^T  0 ] [ x ]   [ 0 ]
 
-The matrix in this system is not symmetric positive definite, so we cannot always use methods like Conjugate Gradient (CG).
+The matrix in this system is not symmetric positive definite, so we cannot always use methods like Conjugate Gradient Method.
 
 Instead, we use:
 
@@ -48,8 +48,6 @@ ksp.solve(rhs, sol)
 
 ## Notes
 - Must be called before ksp.solve()
-- Different solver types are better for different types of matrices
-- GMRES is commonly used for non-symmetric systems
 
 ## Source References
 - PETSc Manual Page: https://petsc.org/release/manualpages/KSP/KSPSetType/
