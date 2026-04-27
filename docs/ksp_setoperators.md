@@ -9,7 +9,7 @@ Underlying PETSc C Function
 KSPSetOperators(KSP ksp, Mat Amat, Mat Pmat)
 
 ## Description
-ksp.setOperators sets the matrix that defines the linear system to be solved by the KSP solver. It can also optionally set a second matrix used for preconditioning. The first matrix defines the system, while the second helps improve how efficiently it is solved. 
+`ksp.setOperators` sets the matrix that defines the linear system to be solved by the KSP solver. It can also optionally set a second matrix used for preconditioning. The first matrix defines the system, while the second helps improve how efficiently it is solved. 
 
 This method must be called before ksp.solve()
 
@@ -33,7 +33,7 @@ using the augmented system:
 
 [ A^T 0 ] [ x ] [ 0 ]
 
-The matrix is built from the original matrix A by combining A, its transpose A^T, and an identity matrix. This creates a larger system that represents the least-squares problem in a different way, allowing us to solve for both the solution x and the residual at the same time. The augmented matrix is called C, so the code uses:
+The matrix is built from the matrix A by combining A, its transpose A^T, and an identity matrix. This creates a larger system that represents the least-squares problem, allowing us to solve for both the solution x and the residual at the same time. The augmented matrix is called C, so the code uses:
 
 ` ksp.setOperators(C, C) ` 
 
