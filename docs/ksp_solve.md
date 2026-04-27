@@ -4,11 +4,11 @@
 ```python
 ksp.solve(b, x)
 ```
-Underlying PERSc Function
+Underlying PETSc Function
 KSPSolve(KSP ksp, Vec b, Vec x)
 
 ## Description
-ksp.solve is the method that solves the linear system defined by the KSP solver. It takes the vector `b` and computes the solution vector `x` such that `Ax=b` where A is the matrix set using `ksp.operators()`. This must be called after setting the solver type and operators. 
+ksp.solve is the method that solves the linear system defined by the KSP solver. It takes the vector `b` and computes the solution vector `x` such that `Ax=b` where A is the matrix set using `ksp.setoperators()`. This must be called after setting the solver type and operators. 
 
 ## Parameters
 - `b (PETSc.Vec)`:
