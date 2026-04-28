@@ -8,7 +8,7 @@ ksp.solve(b, x)
 `KSPSolve(KSP ksp, Vec b, Vec x)`
 
 ## Description
-ksp.solve is the method that solves the linear system defined by the KSP solver. It takes the vector `b` and computes the solution vector `x` such that `Ax=b` where A is the matrix set using `ksp.setOperators()`. This must be called after setting the solver type and operators. 
+`ksp.solve` is the method that solves the linear system defined by the KSP solver. It takes the vector `b` and computes the solution vector `x` such that the defined linear system is satisfied. This must be called after setting the solver type and operators. 
 
 ## Parameters
 - `b (PETSc.Vec)`:
@@ -26,7 +26,7 @@ Our goal is to solve `Ax=b` using the augmented least-squares system:
 
 [ A^T  0 ] [ x ]   [ 0 ]
 ```
-The solver computes both the residual vector `r` and the least squares solution `x`. The solution vector passed into `ksp.solve()` contains both components, and the least-squares solution is extracted from it.
+The solver computes both the residual vector `r` and the least squares solution `x`. The solution vector passed into `ksp.solve()` contains both components, and the least-squares solution is extracted from it. In the code, this system $Cz = d$ is solved when `ksp.solve(rhs, sol)` is called, where `rhs` represents $d$ and `sol` stores the solution vector $z$.
 
 ## Example
 ```python
