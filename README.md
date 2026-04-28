@@ -8,13 +8,13 @@ This project focuses on solving linear least-squares problems using PETSc and pe
 The core mathematical problem is:
 
 
-min_x ||Ax - b||_2
+$$min_x ||Ax - b||_2$$
 
 
 Typically, one could compute this using the Normal Equation:  
 
 
-A^T A x = A^T b
+$$ A^T A x = A^T b$$ 
 
 
 However, solving the least-squares problem this way can be numerically unstable. As an alternative, PETSc uses more stable solving approaches, including iterative and augmented system solvers. This project focuses on understanding and implementing the augmented system approach in Python using petsc4py.
@@ -24,7 +24,7 @@ However, solving the least-squares problem this way can be numerically unstable.
 A least-squares problem occurs when solving an overdetermined system \( Ax = b \), where the exact solution may not exist. The goal is to find the vector \(x\) that minimizes the residual:  
 
 
-||Ax - b||_2
+$$ ||Ax - b||_2 $$ 
 
 
 While the normal equation provides a direct method of solving this system, it can create significant numerical errors. Most modern libraries, like PETSc, use more stable numerical techniques, such as LSQR or the augmented system method, to solve these problems.
@@ -37,7 +37,7 @@ The augmented system used in this project is:
 [ A^T 0 ] [ x ] [ 0 ]
 
 
-This formulation solves for both the least-squares solution \(x\) and the residual vector \(r = b - Ax\) at the same time.
+This formulation solves for both the least-squares solution $x$ and the residual vector $r = b - Ax$ at the same time.
 
 ## AI Translation Experience
 
